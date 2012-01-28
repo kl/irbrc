@@ -1,0 +1,17 @@
+require 'pp'
+
+truths = [:AUTO_INDENT]
+truths.each { |truth| IRB.conf[truth] = true }
+
+lies = [:USE_READLINE]    # so non-english keyboards work properly
+lies.each { |lie| IRB.conf[lie] = false }
+
+
+module Kernel 
+  def cls                 # yeah I'm on Windows bitches!
+    system("cls")
+  end
+end
+
+# Note: to get IRB to execute this file create an environment variable called IRBRC
+# and set it to the abosolute path of this file.
