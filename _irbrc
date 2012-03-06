@@ -1,4 +1,9 @@
-require 'pp'
+#encoding: UTF-8
+
+unless require 'awesome_print'
+  puts "Install awesome_print yo!"
+  require 'pp'
+end
 
 truths = [:AUTO_INDENT]
 truths.each { |truth| IRB.conf[truth] = true }
